@@ -9,7 +9,7 @@ import {TabsPage} from './pages/tabs/tabs';
 })
 export class MyApp {
 
-  private rootPage:any;
+  rootPage:any;
 
   constructor(private platform:Platform) {
     this.rootPage = TabsPage;

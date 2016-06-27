@@ -1,9 +1,9 @@
-var gulp = require('gulp'),
-    gulpWatch = require('gulp-watch'),
-    del = require('del'),
-    runSequence = require('run-sequence'),
-    argv = process.argv;
-
+var gulp = require('gulp');
+var gulpWatch = require('gulp-watch');
+var del = require('del');
+var runSequence = require('run-sequence');
+var argv = process.argv;
+var karma = require('karma');
 
 /**
  * Ionic hooks
@@ -69,4 +69,23 @@ gulp.task('fonts', copyFonts);
 gulp.task('scripts', copyScripts);
 gulp.task('clean', function(){
   return del('www/build');
+});
+
+function createKarmaDone(done) {
+  return (exitStatus) => {
+    done(exitStatus ? "There are failing unit tests" : undefined);
+  }
+}
+
+gulp.task('test', (done) => {
+  new karma.Server({
+    configFile: __dirname + '/config/karma.conf.js',
+    singleRun: true
+  }, createKarmaDone(done)).start();
+});
+
+gulp.task('test:watch', (done) => {
+  new karma.Server({
+    configFile: __dirname + '/config/karma.conf.js'
+  }, createKarmaDone(done)).start();
 });

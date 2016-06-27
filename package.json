@@ -15,6 +15,7 @@
     "zone.js": "^0.6.12"
   },
   "devDependencies": {
+    "browserify-istanbul": "^2.0.0",
     "del": "2.2.0",
     "gulp": "3.9.1",
     "gulp-watch": "4.3.5",
@@ -23,6 +24,16 @@
     "ionic-gulp-html-copy": "^1.0.0",
     "ionic-gulp-sass-build": "^1.0.0",
     "ionic-gulp-scripts-copy": "^2.0.0",
+    "isparta": "^4.0.0",
+    "jasmine-core": "^2.4.1",
+    "karma": "^1.1.0",
+    "karma-browserify": "^5.0.5",
+    "karma-coverage": "^1.0.0",
+    "karma-jasmine": "^1.0.2",
+    "karma-mocha-reporter": "^2.0.4",
+    "karma-phantomjs-launcher": "^1.0.1",
+    "phantomjs-prebuilt": "^2.1.7",
+    "remap-istanbul": "^0.6.4",
     "run-sequence": "1.1.5"
   },
   "cordovaPlugins": [
